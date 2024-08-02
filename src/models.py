@@ -32,6 +32,7 @@ class Post(Base):
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('user.id'), nullable=False)
     
+    
     media = relationship('Media', backref='post', lazy=True)
     comments = relationship('Comment', backref='post', lazy=True)
 
